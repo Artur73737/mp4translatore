@@ -11,25 +11,18 @@
 
 ![workflow](https://cdn.jsdelivr.net/gh/duyplus/markdown-useful-props/sound-wave.gif)
 
-## ✨ Funzionalità
-
-1. **Trascrizione** — Estrae SRT (🇬🇧) dal video via OpenAI Whisper.
-2. **Traduzione** — Converte i sottotitoli in 🇮🇹 con *deep-translator*.
-3. **Sintesi vocale** — Genera MP3 italiano sincronizzato con i time-code.
-4. **Mux finale** — Sostituisce la traccia audio del video con quella doppiata.
-
----
-
 ## 📑 Table of Contents
 
-- [Requisiti](#requisiti)
-- [Installazione rapida](#installazione-rapida)
-- [Come funziona](#come-funziona)
-- [Demo passo-passo](#demo-passo%E2%80%91passo)
-- [Script](#script)
-- [Tips & Tricks](#tips--tricks)
+<details open>
 
----
+* [Requisiti](#requisiti)
+* [Installazione rapida](#installazione-rapida)
+* [Come funziona](#come-funziona)
+* [Demo passo-passo](#demo-passo-passo)
+* [Script](#script-utility)
+* [Tips & Tricks](#tips--tricks)
+
+</details>
 
 ## 🔧 Requisiti
 
@@ -52,8 +45,6 @@ pip install whisper moviepy deep_translator gTTS pydub colorama
 
 </details>
 
----
-
 ## ⚡ Installazione rapida
 
 1. Copia `video.mp4` nella cartella di lavoro.
@@ -72,8 +63,6 @@ Al termine troverai:
 | `video.mp3` | audio doppiato |
 | `video_it.mp4` | video finale con nuovo audio |
 
----
-
 ## 🔍 Come funziona
 
 ```mermaid
@@ -85,8 +74,6 @@ graph TD;
     D -->|Mux| F[MP4 doppiato];
     E --> F;
 ```
-
----
 
 ## 🎮 Demo passo-passo
 
@@ -125,8 +112,6 @@ graph TD;
 
 </details>
 
----
-
 ## 🛠️ Script
 
 | Nome | Descrizione rapida |
@@ -136,16 +121,12 @@ graph TD;
 | `sintetizzatore.py` | gTTS → MP3 sincronizzato |
 | `sostituisci_audio.py` | Sostituisce l'audio in un MP4 |
 
----
-
 ## 💡 Tips & Tricks
 
 * Vuoi più precisione? Cambia modello Whisper: `"small"`, `"medium"`, `"large"`.
 * Hai una GPU? Installa PyTorch CUDA per un boost enorme.
 * gTTS ha limiti di rate-limit: lo script divide frasi lunghe automaticamente.
 * Puoi usare un TTS locale (e.g. Coqui, ElevenLabs) modificando `sintetizzatore.py`.
-
----
 
 > *Buon doppiaggio!*  
 > Condividi feedback e miglioramenti: **Pull Request** welcome! 🎥🎙️ 
